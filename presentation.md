@@ -1,6 +1,6 @@
-# Dual-Track Metagenome Workflow for Viral Detection and Classification
+# Complementary Multi-Strategy Viral Metagenome Workflow
 
-**A Nextflow-based Pipeline for Complementary Viral Identification**
+**Nextflow Pipeline with Dual-Assembler (Short Reads) and Dual-Track (Long Reads) Analysis**
 
 Version 4.1.1 | 2025-11-06
 
@@ -10,12 +10,17 @@ Version 4.1.1 | 2025-11-06
 
 ### What is This?
 
-A **complementary viral identification workflow** combining two independent methods:
+A **comprehensive viral identification workflow** with two analysis modes:
 
-- 🧬 **Feature-based**: viralFlye (Pfam-A HMM + viralVerify)
-- 🔍 **Similarity-based**: Diamond BLASTP (against RVDB)
+**Short Reads (Illumina)**:
+- 🧬 Dual-assembler comparison: MEGAHIT + SPAdes
+- 📊 7-level taxonomic comparison
 
-**Key Innovation**: Dual-track parallel analysis maximizes viral discovery coverage
+**Long Reads (Nanopore/PacBio)**:
+- 🔍 Dual-track analysis: viralFlye (features) + Diamond (similarity)
+- 🎯 3-tier confidence classification
+
+**Key Innovation**: Complementary methods maximize viral discovery coverage
 
 ---
 
@@ -905,9 +910,9 @@ results_long/
 
 **Suggested citation**:
 ```
-Dual-Track Metagenome Workflow for Viral Detection and Classification
+Complementary Multi-Strategy Viral Metagenome Workflow
 Version 4.1.1 (2025)
-https://github.com/[your-repo]/viral-dualtrack
+https://github.com/[your-repo]/complementary-viral-metagenome
 ```
 
 ### Core Tools to Cite
@@ -929,15 +934,16 @@ https://github.com/[your-repo]/viral-dualtrack
 
 ### 🎯 Main Points
 
-1. **Dual-track analysis** combines feature-based and similarity-based viral identification
+1. **Dual strategies**: Short reads use dual-assembler comparison; Long reads use dual-track analysis
 2. **Complementary coverage**: Each method captures viruses the other misses
-3. **Confidence classification**: 3-tier system (consensus, MetaFlye-only, viralFlye-only)
+3. **Confidence classification**: 3-tier system for long reads (consensus, MetaFlye-only, viralFlye-only)
 4. **Complete taxonomy**: 7 levels (Kingdom → Species) for comprehensive analysis
-5. **Validated approach**: 100% consensus rate demonstrates method reliability
+5. **Validated approach**: 100% consensus rate (long reads) demonstrates method reliability
 
 ### 💡 Why This Matters
 
-- Maximizes viral discovery within known viral space
+- **Short reads**: Dual assemblers provide robust viral identification through assembler comparison
+- **Long reads**: Dual-track maximizes viral discovery through complementary methods
 - Provides both **high-confidence** and **exploratory** results
 - Guides downstream analysis with confidence metrics
 - Reproducible, scalable, and well-documented
@@ -953,7 +959,7 @@ https://github.com/[your-repo]/viral-dualtrack
 ```bash
 # 1. Clone repository
 git clone [your-repo-url]
-cd viral-dualtrack
+cd complementary-viral-metagenome
 
 # 2. Prepare test data
 cat > samplesheet_test.csv << EOF
@@ -998,9 +1004,10 @@ ls results_long/consensus_analysis/
 
 ### Workflow Summary
 
-✅ **Dual-track complementary viral identification**  
-✅ **7-level taxonomic resolution**  
-✅ **Confidence-based classification**  
+✅ **Dual-assembler comparison** (short reads: MEGAHIT + SPAdes)  
+✅ **Dual-track complementary identification** (long reads: feature + similarity)  
+✅ **7-level taxonomic resolution** (Kingdom → Species)  
+✅ **Confidence-based classification** (3-tier for long reads)  
 ✅ **Production-ready and validated**
 
 **Ready to discover viruses in your metagenomes!** 🦠🧬
