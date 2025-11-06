@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a Nextflow-based viral metagenome workflow using **complementary strategies** to maximize virus identification coverage. Features **dual-assembler comparison** for short reads (MEGAHIT + SPAdes) and **dual-track analysis** for long reads (viralFlye feature-based + Diamond similarity-based). Supports both short-read (Illumina) and long-read (Nanopore/PacBio) data types.
+This is a Nextflow-based viral metagenome workflow using **complementary strategies** to maximize virus identification coverage. Features **dual-assembler comparison** for short reads (MEGAHIT + SPAdes) and **dual-track analysis** for long reads (viralFlye feature-based + Diamond similarity-based). Supports both short-read (**Illumina**) and long-read (**Nanopore/PacBio**) data types.
 
 **Version**: 4.1.1  
 **Author**: Sihua Peng  
@@ -1326,6 +1326,7 @@ project_root/
 ├── results_long/
 └── work/  (Nextflow working directory)
 ```
+
 
 
 
