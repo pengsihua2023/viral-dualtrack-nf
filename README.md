@@ -1267,62 +1267,6 @@ Grouped by Species:
 
 ---
 
-## Update Log
-
-### v4.2.0 (2025-11-17)
-- **Viral abundance calculation**: Added RPM and RPKM calculation for identified viral contigs
-  - Short reads: BWA alignment of reads to viral contigs, read counting using samtools idxstats
-  - Long reads: minimap2 alignment of long reads to viral contigs, direct SAM parsing for read counting
-  - Generates abundance reports in both text and CSV formats
-  - Merges abundance data with Diamond classification information (taxonomy, identity, etc.)
-- Abundance reports include: contig ID, contig length, mapped reads, RPM, RPKM, and full taxonomic classification
-- Configurable via `--skip_abundance` parameter (default: false, abundance calculation enabled)
-- Resource allocation: 8 CPUs, 16 GB memory, 12 hours time limit per abundance calculation process
-
-### v4.1.1 (2025-11-06)
-- **Enhanced short-read taxonomic comparison**: Added complete 7-level taxonomic comparison in merged reports
-  - Kingdom Level Comparison (Top 15)
-  - Phylum Level Comparison (Top 15)
-  - Class Level Comparison (Top 15)
-  - Order Level Comparison (Top 15)
-  - Family Level Comparison (Top 15)
-  - Genus Level Comparison (Top 15)
-  - Species Level Comparison (Top 20)
-- All files converted to pure English (workflow, config, script, and documentation)
-- Updated workflow title to accurately reflect dual-method approach: dual-assembler comparison (short reads) + dual-track analysis (long reads), with emphasis on RVDB-based classification
-
-### v4.1.0 (2025-11-05)
-- ✨ **Long-read dual-track analysis**: MetaFlye (all sequences) and viralFlye (viral only) complementary identification
-- ✨ Track 1 (MetaFlye + Diamond): Comprehensive analysis of all ~1,200 contigs, based on sequence similarity
-- ✨ Track 2 (viralFlye + Diamond): High-purity viral dataset ~200 contigs, based on viral features
-- ✨ **Consensus analysis**: Automatically compare both result sets, generate three-tier confidence viral lists
-  - Consensus viruses (confirmed by both methods): highest confidence
-  - MetaFlye-only: distant viral candidates
-  - viralFlye-only: feature-based but sequence-unique
-- ✨ viralFlye viral identification: Filter viruses from all sequences (typical 18% contigs, 46% proteins)
-- ✨ Intelligent sequence extraction: Support both seqtk and biopython extraction methods
-- 📊 Complete taxonomic statistics: Five levels - Kingdom/Phylum/Family/Genus/Species
-- 📊 Protein abundance statistics: Protein match count for each viral species, reflecting viral abundance
-- 🐛 Fixed viralFlye sequence extraction issue (automatically extract sequences from ID lists)
-- 📝 Clarified method limitations: Both methods depend on known viral information, cannot identify completely unknown viruses
-
-### v4.0.0 (2025-11-05)
-- ✨ Added long-read support (MetaFlye + viralFlye)
-- ✨ Added taxonomic resolution functionality
-- ✨ Automatic output directory distinction (results_short / results_long)
-- 🐛 Fixed viralFlye environment activation issue (using absolute paths)
-- 🐛 Fixed Flye parameter issue (removed unsupported --read-cov)
-- 📝 Improved error handling and logging
-
-### v3.0.0
-- ✨ Added fastp quality control
-- ✨ Added dual assembler support (MEGAHIT + SPAdes)
-- ✨ Added comprehensive analysis reports
-
-### v2.0.0
-- ✨ Basic metagenome assembly and classification functionality
-
----
 
 ## License
 
@@ -1361,6 +1305,7 @@ project_root/
 ├── results_long/
 └── work/  (Nextflow working directory)
 ```
+
 
 
 
